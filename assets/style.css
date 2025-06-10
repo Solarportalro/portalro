@@ -1,0 +1,8 @@
+html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#232323;background:#f5f7fa;}
+header{background:#78be20;color:#fff;text-align:center;padding:2rem 1rem;}
+header .sub{font-size:1.2rem;margin:0.5rem auto 1.5rem;max-width:600px}
+a.cta{display:inline-block;background:#fff;color:#78be20;padding:0.75rem 1.5rem;border-radius:4px;text-decoration:none;font-weight:bold}
+section.feature{padding:2rem 1rem;max-width:700px;margin:0 auto}
+ul{line-height:1.6}
+footer{text-align:center;padding:1rem;font-size:0.9rem;color:#666}
+.typeform-embed{background:#e0e0e0;padding:2rem;text-align:center;color:#555;border-radius:6px}
