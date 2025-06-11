@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarPortal.ro - Find the Best Solar Installers in Romania</title>
+  <style>
+    :root { --brand-green: #78be20; --gray-light: #f5f5f5; --text-dark: #333; --text-light: #fff; }
+    body { margin: 0; font-family: Arial, sans-serif; color: var(--text-dark); }
+    header { background: var(--text-light); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    header img { height: 40px; }
+    nav a { margin-left: 1.5rem; text-decoration: none; color: var(--text-dark); font-weight: bold; }
+    .hero { display: flex; flex-wrap: wrap; align-items: center; background: var(--gray-light); padding: 2rem; }
+    .hero img { flex: 1 1 300px; max-width: 500px; border-radius: 8px; }
+    .hero .hero-text { flex: 1 1 300px; padding: 1rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero .btn { background: var(--brand-green); color: var(--text-light); padding: 0.75rem 1.5rem; font-size: 1rem; border: none; border-radius: 4px; cursor: pointer; }
+    .section { padding: 2rem; max-width: 1000px; margin: auto; }
+    .how-it-works { text-align: center; }
+    .how-it-works h2 { margin-bottom: 1rem; }
+    .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+    .step { flex: 1 1 200px; }
+    .step img { width: 60px; height: 60px; }
+    .step p { margin-top: 0.5rem; font-weight: bold; }
+    .onboarding { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .onboarding form { flex: 1 1 300px; background: var(--gray-light); padding: 1.5rem; border-radius: 8px; }
+    .onboarding form h3 { margin-top: 0; }
+    .onboarding input, .onboarding button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    .onboarding button { background: var(--brand-green); color: var(--text-light); border: none; cursor: pointer; }
+    .notify { text-align: center; margin-top: 2rem; }
+    .notify input, .notify button { padding: 0.75rem; font-size: 1rem; margin-right: 0.5rem; border-radius: 4px; border: 1px solid #ccc; }
+    .notify button { background: var(--brand-green); color: var(--text-light); border: none; cursor: pointer; }
+    footer { background: #222; color: var(--text-light); text-align: center; padding: 1rem; margin-top: 2rem; }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; }
+      .onboarding { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="SolarPortal.ro Logo">
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#installer">Installer Onboarding</a>
+      <a href="#notify">Notify Me</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="hero-image.png" alt="Solar panels on a house">
+    <div class="hero-text">
+      <h1>Find the Best Solar Installers in Romania</h1>
+      <button class="btn">Get Started</button>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="section how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="icon-submit.png" alt="Submit Request">
+        <p>1. Submit Your Request</p>
+      </div>
+      <div class="step">
+        <img src="icon-compare.png" alt="Compare Offers">
+        <p>2. Compare Offers</p>
+      </div>
+      <div class="step">
+        <img src="icon-choose.png" alt="Choose Installer">
+        <p>3. Choose Installer</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="installer" class="section onboarding">
+    <form>
+      <h3>Installer Onboarding</h3>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone" required>
+      <input type="text" placeholder="Company" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <section id="notify" class="section notify">
+    <p>Want to be notified when we go live?</p>
+    <input type="email" placeholder="Your email">
+    <button>Notify Me</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SolarPortal.ro — All Rights Reserved</p>
+  </footer>
+</body>
+</html>
