@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- File: index.html -->
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Solar Portal România</title>
+  <style>
+    :root { --brand-green: #78BE20; --bg-light: #f9f9f9; --text-dark: #333; --text-light: #fff; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg-light); color: var(--text-dark); }
+    header { background: var(--brand-green); padding: 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; }
+    header img { height: 50px; }
+    nav { display: flex; align-items: center; }
+    .lang-switch a { margin: 0 0.5rem; color: var(--text-light); font-weight: bold; text-decoration: none; cursor: pointer; }
+    .links a { margin: 0 1rem; color: var(--text-light); font-weight: bold; text-decoration: none; }
+    .section { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 8px; }
+    h1, h2 { color: var(--brand-green); }
+    h1 { font-size: 2em; margin-bottom: 10px; text-align: center; }
+    h2 { font-size: 1.5em; margin-top: 30px; }
+    p, ul, ol { line-height: 1.6; margin-top: 10px; }
+    ul, ol { padding-left: 20px; }
+    /* Language visibility */
+    .ro { display: block; }
+    .en { display: none; }
+    /* Cookie banner */
+    #cookie-banner { display: none; position: fixed; bottom: 0; width: 100%; background: #fff; border-top: 1px solid #ccc; padding: 15px; text-align: center; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); }
+    #cookie-banner button { background: var(--brand-green); color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    footer { background: #f1f1f1; padding: 20px; text-align: center; }
+    footer a { margin: 0 10px; color: var(--text-dark); text-decoration: none; font-size: 0.9em; }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.ro').forEach(el => el.style.display = lang === 'ro' ? 'block' : 'none');
+      document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    }
+    function setCookie(name, value, days) {
+      const d = new Date(); d.setTime(d.getTime() + (days*24*60*60*1000));
+      document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+    }
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )'+name+'=([^;]+)')); return match ? match[2] : '';
+    }
+    function acceptCookies() {
+      setCookie('cookie_consent', 'true', 365);
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      switchLang('ro');
+      if (getCookie('cookie_consent') !== 'true') {
+        document.getElementById('cookie-banner').style.display = 'block';
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="assets/logo1.png" alt="Solar Portal România Logo">
+    <nav>
+      <div class="lang-switch">
+        <a onclick="switchLang('ro')">RO</a> | <a onclick="switchLang('en')">EN</a>
+      </div>
+      <div class="links">
+        <a href="#coming" class="ro">În curând</a><a href="#coming" class="en">Coming Soon</a>
+        <a href="#signup" class="ro">Înscriere</a><a href="#signup" class="en">Sign Up</a>
+        <a href="#about" class="ro">Despre noi</a><a href="#about" class="en">About Us</a>
+        <a href="#how-it-works" class="ro">Cum funcționează</a><a href="#how-it-works" class="en">How It Works</a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="coming" class="section">
+    <h1 class="ro">În curând</h1><h1 class="en">Coming Soon</h1>
+    <p class="ro">Solar Portal România va fi lansat în curând. Rămâi aproape!</p><p class="en">Solar Portal Romania is launching shortly. Stay tuned!</p>
+  </div>
+
+  <!-- Sign-up / Form Section -->
+  <div id="signup" class="section">
+    <h2 class="ro">Înscriere</h2><h2 class="en">Sign Up</h2>
+    <p class="ro">Completează formularul de mai jos pentru a fi notificat când lansăm:</p><p class="en">Fill out the form below to get notified when we launch:</p>
+    <div id="form-embed">
+         <iframe data-tally-src="https://tally.so/embed/3xLEav?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="424" frameborder="0" marginheight="0" marginwidth="0" title="null"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script></div>
+  </div>
+
+  <div id="about" class="section">
+    <h2 class="ro">Despre noi</h2><h2 class="en">About Us</h2>
+    <p class="ro">Solar Portal România este o platformă online gratuită care conectează proprietarii de locuințe cu instalatori autorizați de sisteme fotovoltaice.</p><p class="en">Solar Portal Romania is a free online platform connecting homeowners with certified solar installers.</p>
+    <h2 class="ro">Misiunea noastră</h2><h2 class="en">Our Mission</h2>
+    <p class="ro">Simplificăm tranziția la energia solară prin comparație transparentă și parteneri de încredere.</p><p class="en">We simplify the transition to solar power through transparent comparison and trusted partners.</p>
+    <h2 class="ro">De ce să ne alegi?</h2><h2 class="en">Why Choose Us?</h2>
+    <ul>
+      <li class="ro">Gratuit pentru clienți</li><li class="en">Free for customers</li>
+      <li class="ro">Oferte transparente</li><li class="en">Transparent quotes</li>
+      <li class="ro">Control asupra datelor personale</li><li class="en">Data privacy control</li>
+    </ul>
+  </div>
+
+  <div id="how-it-works" class="section">
+    <h2 class="ro">Cum funcționează</h2><h2 class="en">How It Works</h2>
+    <ol>
+      <li><strong class="ro">Trimite cererea ta</strong><strong class="en">Submit your request</strong><br>
+        <span class="ro">Completează un formular rapid și specifică necesitățile.</span><span class="en">Fill out a quick form and specify your needs.</span></li>
+      <li><strong class="ro">Compară oferte</strong><strong class="en">Compare quotes</strong><br>
+        <span class="ro">Vizualizează propuneri și prețuri detaliate de la instalatori autorizați.</span><span class="en">View detailed proposals and prices from certified installers.</span></li>
+      <li><strong class="ro">Alege instalatorul</strong><strong class="en">Choose installer</strong><br>
+        <span class="ro">Alege cea mai bună ofertă în funcție de preț, garanție și recenzii.</span><span class="en">Select the best match based on price, warranty, and reviews.</span></li>
+      <li><strong class="ro">Partajează datele</strong><strong class="en">Share your data</strong><br>
+        <span class="ro">Datele tale rămân ascunse până decizi să le partajați.</span><span class="en">Your contact details remain hidden until you decide to share.</span></li>
+      <li><strong class="ro">Instalare și suport</strong><strong class="en">Installation & support</strong><br>
+        <span class="ro">Beneficiezi de suport gratuit pe tot parcursul procesului.</span><span class="en">Get your panels installed and enjoy free guidance throughout.</span></li>
+    </ol>
+  </div>
+
+  <!-- Footer with legal links -->
+  <footer>
+    <a href="terms.html" class="ro">Termeni și condiții</a><a href="terms-en.html" class="en">Terms & Conditions</a> |
+    <a href="privacy.html" class="ro">Politica de confidențialitate</a><a href="privacy-en.html" class="en">Privacy Policy</a> |
+    <a href="cookie-policy.html" class="ro">Politica Cookie</a><a href="cookie-policy-en.html" class="en">Cookie Policy</a>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner">
+    <span class="ro">Folosim cookie-uri pentru a îmbunătăți experiența. <button onclick="acceptCookies()">Accept</button></span>
+    <span class="en">We use cookies to improve experience. <button onclick="acceptCookies()">Accept</button></span>
+  </div>
+</body>
+</html>
