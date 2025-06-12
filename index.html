@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- File: index.html -->
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Solar Portal România</title>
+  <style>
+    :root {
+      --brand-green: #78BE20;
+      --bg-light: #f9f9f9;
+      --text-dark: #333;
+      --text-light: #fff;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    header {
+      background: var(--brand-green);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+    }
+    header img {
+      height: 50px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    .lang-switch a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: bold;
+    }
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: var(--brand-green);
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+    p, ul, ol {
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    /* Language visibility */
+    .ro { display: block; }
+    .en { display: none; }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.ro').forEach(el => el.style.display = lang === 'ro' ? 'block' : 'none');
+      document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    }
+    window.addEventListener('DOMContentLoaded', () => switchLang('ro'));
+  </script>
+</head>
+<body>
+  <header>
+    <img src="assets/logo.svg" alt="Solar Portal România Logo">
+    <nav>
+      <div class="lang-switch">
+        <a onclick="switchLang('ro')">RO</a> |
+        <a onclick="switchLang('en')">EN</a>
+      </div>
+      <div class="links">
+        <a href="#coming" class="ro">În curând</a>
+        <a href="#coming" class="en">Coming Soon</a>
+        <a href="#about" class="ro">Despre noi</a>
+        <a href="#about" class="en">About Us</a>
+        <a href="#how-it-works" class="ro">Cum funcționează</a>
+        <a href="#how-it-works" class="en">How It Works</a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="coming" class="section">
+    <h1 class="ro">În curând</h1>
+    <h1 class="en">Coming Soon</h1>
+    <p class="ro">Solar Portal România va fi lansat în curând. Rămâi aproape!</p>
+    <p class="en">Solar Portal Romania is launching shortly. Stay tuned!</p>
+  </div>
+
+  <div id="about" class="section">
+    <h2 class="ro">Despre noi</h2>
+    <h2 class="en">About Us</h2>
+    <p class="ro">Solar Portal România este o platformă online gratuită care conectează proprietarii de locuințe cu instalatori autorizați de sisteme fotovoltaice.</p>
+    <p class="en">Solar Portal Romania is a free online platform connecting homeowners with certified solar installers.</p>
+    <h2 class="ro">Misiunea noastră</h2>
+    <h2 class="en">Our Mission</h2>
+    <p class="ro">Simplificăm tranziția la energia solară prin comparație transparentă și parteneri de încredere.</p>
+    <p class="en">We simplify the transition to solar power through transparent comparison and trusted partners.</p>
+    <h2 class="ro">De ce să ne alegi?</h2>
+    <h2 class="en">Why Choose Us?</h2>
+    <ul>
+      <li class="ro">Gratuit pentru clienți</li>
+      <li class="en">Free for customers</li>
+      <li class="ro">Oferte transparente</li>
+      <li class="en">Transparent quotes</li>
+      <li class="ro">Control asupra datelor personale</li>
+      <li class="en">Data privacy control</li>
+    </ul>
+  </div>
+
+  <div id="how-it-works" class="section">
+    <h2 class="ro">Cum funcționează</h2>
+    <h2 class="en">How It Works</h2>
+    <ol>
+      <li><strong class="ro">Trimite cererea ta</strong><strong class="en">Submit your request</strong><br>
+          <span class="ro">Completează un formular rapid și specifică necesitățile.</span>
+          <span class="en">Fill out a quick form and specify your needs.</span>
+      </li>
+      <li><strong class="ro">Compară oferte</strong><strong class="en">Compare quotes</strong><br>
+          <span class="ro">Vizualizează propuneri și prețuri detaliate de la instalatori autorizați.</span>
+          <span class="en">View detailed proposals and prices from certified installers.</span>
+      </li>
+      <li><strong class="ro">Alege instalatorul</strong><strong class="en">Choose installer</strong><br>
+          <span class="ro">Alege cea mai bună ofertă în funcție de preț, garanție și recenzii.</span>
+          <span class="en">Select the best match based on price, warranty, and reviews.</span>
+      </li>
+      <li><strong class="ro">Partajează datele</strong><strong class="en">Share your data</strong><br>
+          <span class="ro">Datele tale rămân ascunse până decizi să le partajezi.</span>
+          <span class="en">Your contact details remain hidden until you decide to share.</span>
+      </li>
+      <li><strong class="ro">Instalare și suport</strong><strong class="en">Installation & support</strong><br>
+          <span class="ro">Beneficiezi de suport gratuit pe tot parcursul procesului.</span>
+          <span class="en">Get your panels installed and enjoy free guidance throughout.</span>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
