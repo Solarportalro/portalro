@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>GDPR - SolarPortal.ro</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-ro]').forEach(function(el) {
+        el.style.display = (lang === 'ro') ? '' : 'none';
+      });
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.style.display = (lang === 'en') ? '' : 'none';
+      });
+      localStorage.setItem('lang', lang);
+    }
+    window.onload = function() {
+      var lang = localStorage.getItem('lang') || 'ro';
+      setLang(lang);
+      document.getElementById('lang-ro').onclick = function() { setLang('ro'); };
+      document.getElementById('lang-en').onclick = function() { setLang('en'); };
+    };
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../SP.png" alt="SolarPortal Logo" class="logo">
+        <div class="lang-switch">
+            <button id="lang-ro">RO</button> |
+            <button id="lang-en">EN</button>
+        </div>
+    </header>
+    <main class="legal">
+        <h1 data-ro>GDPR - Regulamentul General privind Protecția Datelor</h1>
+        <h1 data-en>GDPR - General Data Protection Regulation</h1>
+        <p data-ro>SolarPortal.ro respectă prevederile GDPR și asigură protecția datelor cu caracter personal ale utilizatorilor săi.</p>
+        <p data-en>SolarPortal.ro complies with GDPR and ensures the protection of users' personal data.</p>
+        <h2 data-ro>Drepturile utilizatorilor</h2>
+        <h2 data-en>User rights</h2>
+        <ul>
+            <li data-ro>Dreptul de a fi informat</li>
+            <li data-en>Right to be informed</li>
+            <li data-ro>Dreptul de acces la date</li>
+            <li data-en>Right to access data</li>
+            <li data-ro>Dreptul la rectificare</li>
+            <li data-en>Right to rectification</li>
+            <li data-ro>Dreptul la ștergere („dreptul de a fi uitat”)</li>
+            <li data-en>Right to erasure ("right to be forgotten")</li>
+            <li data-ro>Dreptul la restricționarea prelucrării</li>
+            <li data-en>Right to restrict processing</li>
+            <li data-ro>Dreptul la portabilitatea datelor</li>
+            <li data-en>Right to data portability</li>
+            <li data-ro>Dreptul la opoziție</li>
+            <li data-en>Right to object</li>
+        </ul>
+        <h2 data-ro>Prelucrarea datelor</h2>
+        <h2 data-en>Data processing</h2>
+        <p data-ro>Datele colectate sunt folosite exclusiv pentru a facilita obținerea de oferte de la instalatori solari și pentru a îmbunătăți serviciile platformei. Datele nu sunt partajate cu terți fără consimțământul explicit al utilizatorului.</p>
+        <p data-en>The collected data is used exclusively to facilitate obtaining offers from solar installers and to improve the platform's services. Data is not shared with third parties without the user's explicit consent.</p>
+        <h2 data-ro>Contact</h2>
+        <h2 data-en>Contact</h2>
+        <p data-ro>Pentru exercitarea drepturilor sau pentru întrebări suplimentare, ne puteți contacta la <a href="mailto:info@solarportal.ro">info@solarportal.ro</a>.</p>
+        <p data-en>To exercise your rights or for further questions, you can contact us at <a href="mailto:info@solarportal.ro">info@solarportal.ro</a>.</p>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html" data-ro>Înapoi la pagina principală</a>
+            <a href="index.html" data-en>Back to main page</a>
+        </div>
+    </footer>
+</body>
+</html> 

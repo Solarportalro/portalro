@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarPortal.ro - Oferte Solare Verificate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="SP.png">
+    <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-ro]').forEach(function(el) {
+        el.style.display = (lang === 'ro') ? '' : 'none';
+      });
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.style.display = (lang === 'en') ? '' : 'none';
+      });
+      localStorage.setItem('lang', lang);
+      updatePreregPlaceholders(lang);
+    }
+    window.onload = function() {
+      var lang = localStorage.getItem('lang');
+      if (lang !== 'ro' && lang !== 'en') lang = 'ro';
+      setLang(lang);
+      document.getElementById('lang-ro').onclick = function() { setLang('ro'); updatePreregPlaceholders('ro'); };
+      document.getElementById('lang-en').onclick = function() { setLang('en'); updatePreregPlaceholders('en'); };
+      if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+      } else {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+      setupAjaxForms();
+    };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="lang-switch center">
+            <button id="lang-ro">RO</button>
+            <button id="lang-en">EN</button>
+        </div>
+        <img src="../SP.png" alt="SolarPortal Logo" class="logo">
+        <nav>
+            <a href="#cum-functioneaza" data-ro>Cum funcționează</a>
+            <a href="#cum-functioneaza" data-en>How it works</a>
+            <a href="#faq" data-ro>FAQ</a>
+            <a href="#faq" data-en>FAQ</a>
+            <a href="#form-instalatori" data-ro>Înregistrare Instalatori</a>
+            <a href="#form-instalatori" data-en>Installer Registration</a>
+            <a href="#contact" data-ro>Contact</a>
+            <a href="#contact" data-en>Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="eco-friendly-solar-pannels-sunny-day.jpg" alt="Eco-friendly solar panels on a sunny day" class="hero-img">
+        <h1 data-ro>Primește oferte de la instalatori solari verificați din România</h1>
+        <h1 data-en>Get quotes from verified solar installers in Romania</h1>
+        <p data-ro>Platformă independentă, fără apeluri de la agenți de vânzări.</p>
+        <p data-en>Independent platform, no sales calls.</p>
+        <p data-ro>Completează o singură cerere și primești mai multe oferte competitive, fără apeluri de la agenți de vânzări.</p>
+        <p data-en>Fill out a single request and receive multiple competitive offers, without sales calls.</p>
+        <form class="prereg-form" action="https://formspree.io/f/xgvyladp" method="POST">
+            <h3 data-ro>Preînregistrare pentru oferte</h3>
+            <h3 data-en>Pre-registration for quotes</h3>
+            <p data-ro>Serviciul va fi disponibil în curând. Lăsați datele și vă vom contacta la lansare.</p>
+            <p data-en>The service will be available soon. Leave your details and we will contact you when we launch.</p>
+            <input type="text" name="prereg_name" id="prereg_name" required placeholder="Nume">
+            <input type="email" name="prereg_email" required placeholder="Email">
+            <input type="tel" name="prereg_phone" id="prereg_phone" required placeholder="Telefon">
+            <button type="submit" data-ro>Preînregistrează-te</button>
+            <button type="submit" data-en>Pre-register</button>
+        </form>
+        <div class="thank-you-message" style="display:none;">
+            <p data-ro>Mulțumim! Cererea ta a fost trimisă cu succes. Te vom contacta la lansare.</p>
+            <p data-en>Thank you! Your request has been submitted successfully. We will contact you at launch.</p>
+        </div>
+    </section>
+    <section class="values">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Relaxed person at home using laptop" class="section-img">
+        <h2 data-ro>De ce SolarPortal.ro?</h2>
+        <h2 data-en>Why SolarPortal.ro?</h2>
+        <ul>
+            <li data-ro>Oferte multiple cu o singură cerere</li>
+            <li data-en>Multiple offers with a single request</li>
+            <li data-ro>Consultanță imparțială</li>
+            <li data-en>Unbiased consultation</li>
+            <li data-ro>Instalatori verificați</li>
+            <li data-en>Verified installers</li>
+            <li data-ro>Informațiile tale sunt protejate</li>
+            <li data-en>Your information is protected</li>
+            <li data-ro>Platformă gratuită</li>
+            <li data-en>Free platform</li>
+        </ul>
+    </section>
+    <section id="cum-functioneaza" class="how-it-works">
+        <h2 data-ro>Cum funcționează?</h2>
+        <h2 data-en>How it works?</h2>
+        <div class="steps">
+            <div class="step">
+                <span>1</span>
+                <p data-ro>Trimite cererea</p>
+                <p data-en>Send your request</p>
+            </div>
+            <div class="step">
+                <span>2</span>
+                <p data-ro>Primește și compară ofertele</p>
+                <p data-en>Receive and compare offers</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p data-ro>Economisește și alege instalatorul potrivit</p>
+                <p data-en>Save and choose the right installer</p>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="faq">
+        <h2 data-ro>Întrebări frecvente</h2>
+        <h2 data-en>Frequently Asked Questions</h2>
+        <div class="faq-list">
+        <details data-ro>
+            <summary>Ce este SolarPortal.ro?</summary>
+            <p>SolarPortal.ro este o platformă independentă care conectează clienții cu companii de instalare solară verificate, oferind oferte multiple cu o singură cerere.</p>
+        </details>
+        <details data-en>
+            <summary>What is SolarPortal.ro?</summary>
+            <p>SolarPortal.ro is an independent platform connecting customers with verified solar installation companies, providing multiple offers with a single request.</p>
+        </details>
+        <details data-ro>
+            <summary>Cum funcționează platforma?</summary>
+            <p>Completezi o cerere, iar instalatorii verificați îți trimit oferte. Poți compara prețuri, echipamente și garanții, iar datele tale rămân confidențiale până alegi un furnizor.</p>
+        </details>
+        <details data-en>
+            <summary>How does the platform work?</summary>
+            <p>You fill out a request, and verified installers send you offers. You can compare prices, equipment, and warranties, and your data remains private until you choose a provider.</p>
+        </details>
+        <details data-ro>
+            <summary>SolarPortal.ro este gratuit?</summary>
+            <p>Da, platforma este complet gratuită pentru utilizatori. Nu există costuri pentru a primi oferte sau consultanță.</p>
+        </details>
+        <details data-en>
+            <summary>Is SolarPortal.ro free?</summary>
+            <p>Yes, the platform is completely free for users. There are no costs to receive offers or consultation.</p>
+        </details>
+        <details data-ro>
+            <summary>Ce se întâmplă cu datele mele personale?</summary>
+            <p>Datele tale sunt protejate și nu sunt partajate cu instalatorii decât dacă alegi să colaborezi cu unul dintre ei.</p>
+        </details>
+        <details data-en>
+            <summary>What happens to my personal data?</summary>
+            <p>Your data is protected and not shared with installers unless you choose to work with one of them.</p>
+        </details>
+        <details data-ro>
+            <summary>De ce să folosesc SolarPortal.ro?</summary>
+            <p>Primești oferte competitive de la instalatori verificați, consultanță imparțială și eviți apelurile nedorite de la agenți de vânzări.</p>
+        </details>
+        <details data-en>
+            <summary>Why use SolarPortal.ro?</summary>
+            <p>You get competitive offers from verified installers, unbiased advice, and avoid unwanted sales calls.</p>
+        </details>
+        <details data-ro>
+            <summary>Cum aleg cel mai bun furnizor?</summary>
+            <p>Poți compara toate ofertele primite și poți cere sfaturi consultanților noștri pentru a lua cea mai bună decizie.</p>
+        </details>
+        <details data-en>
+            <summary>How do I choose the best provider?</summary>
+            <p>You can compare all received offers and ask our consultants for advice to make the best decision.</p>
+        </details>
+        <details data-ro>
+            <summary>Ce este energia solară?</summary>
+            <p>Energia solară este cea mai abundentă resursă de energie și poate fi folosită chiar și pe vreme înnorată.</p>
+        </details>
+        <details data-en>
+            <summary>What is solar energy?</summary>
+            <p>Solar energy is the most abundant energy resource and can be harnessed even in cloudy weather.</p>
+        </details>
+        <details data-ro>
+            <summary>Panourile solare funcționează când nu e soare?</summary>
+            <p>Panourile solare produc mai puțină energie pe vreme înnorată și nu produc deloc noaptea.</p>
+        </details>
+        <details data-en>
+            <summary>Do solar panels work when the sun isn't shining?</summary>
+            <p>Solar panels produce less energy when it's cloudy and none at night.</p>
+        </details>
+        <details data-ro>
+            <summary>Ce întreținere necesită panourile solare?</summary>
+            <p>Panourile solare sunt durabile și necesită întreținere minimă, de obicei doar curățare periodică.</p>
+        </details>
+        <details data-en>
+            <summary>What maintenance do solar panels require?</summary>
+            <p>Solar panels are durable and require minimal maintenance, usually just periodic cleaning.</p>
+        </details>
+        <details data-ro>
+            <summary>Pot instala panouri solare dacă acoperișul meu nu e orientat spre sud?</summary>
+            <p>Acoperișurile orientate spre sud sunt ideale, dar și cele est-vest pot funcționa eficient. Consultanții noștri te pot ajuta cu soluții personalizate.</p>
+        </details>
+        <details data-en>
+            <summary>Can I install solar panels if my roof doesn't face south?</summary>
+            <p>South-facing roofs are ideal, but east-west roofs can also work efficiently. Our consultants can help with personalized solutions.</p>
+        </details>
+        </div>
+    </section>
+    <section id="form-instalatori" class="register-form">
+        <h2 data-ro>Formular de înregistrare pentru instalatori</h2>
+        <h2 data-en>Installer Registration Form</h2>
+        <img src="representation-ecology-sustainability.jpg" alt="Representation of ecology and sustainability" class="section-img">
+        <form action="https://formspree.io/f/xkgbvjyy" method="POST">
+            <label for="company" data-ro>Nume companie</label>
+            <label for="company" data-en>Company Name</label>
+            <input type="text" id="company" name="company" required>
+            <label for="contact" data-ro>Persoană de contact</label>
+            <label for="contact" data-en>Contact Person</label>
+            <input type="text" id="contact" name="contact" required>
+            <label for="email" data-ro>Email</label>
+            <label for="email" data-en>Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone" data-ro>Telefon</label>
+            <label for="phone" data-en>Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="message" data-ro>Mesaj</label>
+            <label for="message" data-en>Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <button type="submit" data-ro>Înregistrează-te</button>
+            <button type="submit" data-en>Register</button>
+        </form>
+        <div class="thank-you-message" style="display:none;">
+            <p data-ro>Mulțumim pentru înregistrare! Vom reveni cu detalii în curând.</p>
+            <p data-en>Thank you for registering! We will get back to you soon.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html" data-ro>Politica de Confidențialitate</a>
+            <a href="privacy.html" data-en>Privacy Policy</a> |
+            <a href="gdpr.html" data-ro>GDPR</a>
+            <a href="gdpr.html" data-en>GDPR</a> |
+            <a href="terms.html" data-ro>Termeni și Condiții</a>
+            <a href="terms.html" data-en>Terms & Conditions</a>
+        </div>
+        <div id="contact">
+            <p data-ro>&copy; 2025 SolarPortal.ro. Toate drepturile rezervate.</p>
+            <p data-en>&copy; 2025 SolarPortal.ro. All rights reserved.</p>
+        </div>
+    </footer>
+    <div id="cookie-banner" class="cookie-banner">
+        <div data-ro>
+            Acest site folosește cookie-uri pentru a îmbunătăți experiența și pentru analiză (Google Analytics). <a href="privacy.html">Află mai multe</a>.<br>
+            <button onclick="acceptCookies()">Acceptă toate</button>
+            <button onclick="rejectCookies()">Respinge cookie-urile neesențiale</button>
+        </div>
+        <div data-en>
+            This site uses cookies to enhance your experience and for analytics (Google Analytics). <a href="privacy.html">Learn more</a>.<br>
+            <button onclick="acceptCookies()">Accept all</button>
+            <button onclick="rejectCookies()">Reject non-essential cookies</button>
+        </div>
+    </div>
+    <script>
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'yes');
+      hideCookieBanner();
+      // Here you would enable analytics scripts
+    }
+    function rejectCookies() {
+      localStorage.setItem('cookiesAccepted', 'no');
+      hideCookieBanner();
+      // Here you would disable analytics scripts
+    }
+    function getCurrentLang() {
+      return document.documentElement.lang || 'ro';
+    }
+    function showThankYou(form) {
+      form.style.display = 'none';
+      var thankYou = form.nextElementSibling;
+      while (thankYou && (!thankYou.classList || !thankYou.classList.contains('thank-you-message'))) {
+        thankYou = thankYou.nextElementSibling;
+      }
+      if (thankYou && thankYou.classList.contains('thank-you-message')) {
+        thankYou.style.display = 'block';
+        var lang = getCurrentLang();
+        thankYou.querySelectorAll('[data-ro], [data-en]').forEach(function(el) {
+          el.style.display = (el.getAttribute('data-' + lang) !== null) ? '' : 'none';
+        });
+        thankYou.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+    function showError(form, message) {
+      var error = form.querySelector('.form-error');
+      if (!error) {
+        error = document.createElement('div');
+        error.className = 'form-error';
+        error.style.color = 'red';
+        error.style.marginBottom = '1em';
+        form.insertBefore(error, form.firstChild);
+      }
+      error.textContent = message;
+    }
+    function clearError(form) {
+      var error = form.querySelector('.form-error');
+      if (error) error.remove();
+    }
+    function validateForm(form) {
+      clearError(form);
+      var email = form.querySelector('input[type="email"]');
+      var phone = form.querySelector('input[type="tel"]');
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      var phonePattern = /^[0-9\-\+\s\(\)]{7,}$/;
+      if (email && !emailPattern.test(email.value)) {
+        showError(form, getCurrentLang() === 'ro' ? 'Email invalid.' : 'Invalid email.');
+        return false;
+      }
+      if (phone && !phonePattern.test(phone.value)) {
+        showError(form, getCurrentLang() === 'ro' ? 'Telefon invalid.' : 'Invalid phone number.');
+        return false;
+      }
+      var valid = true;
+      form.querySelectorAll('[required]').forEach(function(input) {
+        if (!input.value.trim()) {
+          showError(form, getCurrentLang() === 'ro' ? 'Toate câmpurile sunt obligatorii.' : 'All fields are required.');
+          valid = false;
+        }
+      });
+      return valid;
+    }
+    function setupAjaxForms() {
+      document.querySelectorAll('form[action^="https://formspree.io/"]').forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (!validateForm(form)) return;
+          var formData = new FormData(form);
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          })
+          .then(function(response) {
+            if (response.ok) {
+              showThankYou(form);
+            } else {
+              response.json().then(function(data) {
+                showError(form, (data.errors && data.errors.length) ? data.errors[0].message : (getCurrentLang() === 'ro' ? 'A apărut o eroare. Încercați din nou.' : 'An error occurred. Please try again.'));
+              });
+            }
+          })
+          .catch(function() {
+            showError(form, getCurrentLang() === 'ro' ? 'A apărut o eroare de rețea.' : 'A network error occurred.');
+          });
+        });
+      });
+    }
+    function updatePreregPlaceholders(lang) {
+      var nameInput = document.getElementById('prereg_name');
+      var phoneInput = document.getElementById('prereg_phone');
+      if (nameInput) nameInput.placeholder = (lang === 'ro') ? 'Nume' : 'Name';
+      if (phoneInput) phoneInput.placeholder = (lang === 'ro') ? 'Telefon' : 'Phone';
+    }
+    </script>
+</body>
+</html> 

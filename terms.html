@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Termeni și Condiții / Terms & Conditions - SolarPortal.ro</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-ro]').forEach(function(el) {
+        el.style.display = (lang === 'ro') ? '' : 'none';
+      });
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.style.display = (lang === 'en') ? '' : 'none';
+      });
+      localStorage.setItem('lang', lang);
+    }
+    window.onload = function() {
+      var lang = localStorage.getItem('lang') || 'ro';
+      setLang(lang);
+      document.getElementById('lang-ro').onclick = function() { setLang('ro'); };
+      document.getElementById('lang-en').onclick = function() { setLang('en'); };
+    };
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../SP.png" alt="SolarPortal Logo" class="logo">
+        <div class="lang-switch">
+            <button id="lang-ro">RO</button> |
+            <button id="lang-en">EN</button>
+        </div>
+    </header>
+    <main class="legal">
+        <h1 data-ro>Termeni și Condiții</h1>
+        <h1 data-en>Terms & Conditions</h1>
+        <h2 data-ro>1. Descrierea platformei</h2>
+        <h2 data-en>1. Platform Description</h2>
+        <p data-ro>SolarPortal.ro este o platformă independentă care facilitează obținerea de oferte de la companii de instalare solară verificate din România.</p>
+        <p data-en>SolarPortal.ro is an independent platform that facilitates obtaining offers from verified solar installation companies in Romania.</p>
+        <h2 data-ro>2. Responsabilitățile utilizatorilor</h2>
+        <h2 data-en>2. User Responsibilities</h2>
+        <ul>
+            <li data-ro>Să furnizeze informații corecte și complete în formularele de pe site.</li>
+            <li data-en>To provide correct and complete information in the site forms.</li>
+            <li data-ro>Să utilizeze platforma în scopuri legale.</li>
+            <li data-en>To use the platform for legal purposes.</li>
+        </ul>
+        <h2 data-ro>3. Responsabilitățile instalatorilor</h2>
+        <h2 data-en>3. Installer Responsibilities</h2>
+        <ul>
+            <li data-ro>Să ofere oferte reale și transparente.</li>
+            <li data-en>To provide real and transparent offers.</li>
+            <li data-ro>Să respecte legislația în vigoare privind protecția datelor și serviciile prestate.</li>
+            <li data-en>To comply with current legislation regarding data protection and provided services.</li>
+        </ul>
+        <h2 data-ro>4. Limitări și excluderi</h2>
+        <h2 data-en>4. Limitations and Exclusions</h2>
+        <ul>
+            <li data-ro>SolarPortal.ro nu este responsabil pentru calitatea serviciilor prestate de instalatori.</li>
+            <li data-en>SolarPortal.ro is not responsible for the quality of services provided by installers.</li>
+            <li data-ro>Platforma nu garantează acceptarea unei oferte sau finalizarea unui contract.</li>
+            <li data-en>The platform does not guarantee the acceptance of an offer or the completion of a contract.</li>
+        </ul>
+        <h2 data-ro>5. Modificări</h2>
+        <h2 data-en>5. Changes</h2>
+        <p data-ro>Ne rezervăm dreptul de a modifica acești termeni și condiții. Orice modificare va fi publicată pe această pagină.</p>
+        <p data-en>We reserve the right to modify these terms and conditions. Any changes will be published on this page.</p>
+        <h2 data-ro>6. Contact</h2>
+        <h2 data-en>6. Contact</h2>
+        <p data-ro>Pentru întrebări sau clarificări, ne puteți contacta la <a href="mailto:info@solarportal.ro">info@solarportal.ro</a>.</p>
+        <p data-en>For questions or clarifications, you can contact us at <a href="mailto:info@solarportal.ro">info@solarportal.ro</a>.</p>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html" data-ro>Înapoi la pagina principală</a>
+            <a href="index.html" data-en>Back to main page</a>
+        </div>
+    </footer>
+</body>
+</html> 

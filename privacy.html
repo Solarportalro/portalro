@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Politica de Confidențialitate / Privacy Policy - SolarPortal.ro</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-ro]').forEach(function(el) {
+        el.style.display = (lang === 'ro') ? '' : 'none';
+      });
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.style.display = (lang === 'en') ? '' : 'none';
+      });
+      localStorage.setItem('lang', lang);
+    }
+    window.onload = function() {
+      var lang = localStorage.getItem('lang') || 'ro';
+      setLang(lang);
+      document.getElementById('lang-ro').onclick = function() { setLang('ro'); };
+      document.getElementById('lang-en').onclick = function() { setLang('en'); };
+    };
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../SP.png" alt="SolarPortal Logo" class="logo">
+        <div class="lang-switch">
+            <button id="lang-ro">RO</button> |
+            <button id="lang-en">EN</button>
+        </div>
+    </header>
+    <main class="legal">
+        <h1 data-ro>Politica de Confidențialitate</h1>
+        <h1 data-en>Privacy Policy</h1>
+        <p data-ro>SolarPortal.ro respectă confidențialitatea datelor dumneavoastră și se angajează să protejeze informațiile personale pe care le colectăm. Această politică explică modul în care colectăm, utilizăm și protejăm datele dumneavoastră, în conformitate cu Regulamentul General privind Protecția Datelor (GDPR).</p>
+        <p data-en>SolarPortal.ro respects your privacy and is committed to protecting the personal information we collect. This policy explains how we collect, use, and protect your data, in accordance with the General Data Protection Regulation (GDPR).</p>
+        <h2 data-ro>Ce date colectăm?</h2>
+        <h2 data-en>What data do we collect?</h2>
+        <ul>
+            <li data-ro>Nume și prenume</li>
+            <li data-en>Name and surname</li>
+            <li data-ro>Adresă de email</li>
+            <li data-en>Email address</li>
+            <li data-ro>Număr de telefon</li>
+            <li data-en>Phone number</li>
+            <li data-ro>Numele companiei (pentru instalatori)</li>
+            <li data-en>Company name (for installers)</li>
+            <li data-ro>Alte informații furnizate voluntar prin formulare</li>
+            <li data-en>Other information voluntarily provided via forms</li>
+        </ul>
+        <h2 data-ro>Cum folosim datele?</h2>
+        <h2 data-en>How do we use the data?</h2>
+        <ul>
+            <li data-ro>Pentru a vă oferi oferte de la instalatori verificați</li>
+            <li data-en>To provide you with offers from verified installers</li>
+            <li data-ro>Pentru a vă contacta în legătură cu cererea dumneavoastră</li>
+            <li data-en>To contact you regarding your request</li>
+            <li data-ro>Pentru a îmbunătăți serviciile noastre</li>
+            <li data-en>To improve our services</li>
+        </ul>
+        <h2 data-ro>Protecția datelor</h2>
+        <h2 data-en>Data protection</h2>
+        <p data-ro>Datele dumneavoastră sunt stocate în siguranță și nu sunt partajate cu terți fără consimțământul explicit, cu excepția cazului în care este necesar pentru a vă furniza serviciul solicitat.</p>
+        <p data-en>Your data is stored securely and is not shared with third parties without your explicit consent, except when necessary to provide the requested service.</p>
+        <h2 data-ro>Drepturile dumneavoastră</h2>
+        <h2 data-en>Your rights</h2>
+        <ul>
+            <li data-ro>Dreptul de acces la date</li>
+            <li data-en>Right to access data</li>
+            <li data-ro>Dreptul de rectificare</li>
+            <li data-en>Right to rectification</li>
+            <li data-ro>Dreptul de ștergere</li>
+            <li data-en>Right to erasure</li>
+            <li data-ro>Dreptul de restricționare a prelucrării</li>
+            <li data-en>Right to restrict processing</li>
+            <li data-ro>Dreptul de opoziție</li>
+            <li data-en>Right to object</li>
+        </ul>
+        <h2 data-ro>Contact</h2>
+        <h2 data-en>Contact</h2>
+        <p data-ro>Pentru orice întrebări sau solicitări privind datele personale, vă rugăm să ne contactați la <a href="mailto:info@solarportal.ro">info@solarportal.ro</a>.</p>
+        <p data-en>For any questions or requests regarding personal data, please contact us at <a href="mailto:info@solarportal.ro">info@solarportal.ro</a>.</p>
+        <h2 data-ro>Politica de Cookie-uri</h2>
+        <h2 data-en>Cookie Policy</h2>
+        <p data-ro>SolarPortal.ro folosește cookie-uri pentru a îmbunătăți experiența utilizatorilor și pentru a analiza traficul pe site prin servicii de analiză (de exemplu, Google Analytics). Cookie-urile pot fi gestionate sau șterse din setările browserului. La prima vizită, utilizatorii pot accepta sau refuza cookie-urile neesențiale.</p>
+        <p data-en>SolarPortal.ro uses cookies to enhance user experience and analyze site traffic through analytics services (e.g., Google Analytics). Cookies can be managed or deleted from your browser settings. On first visit, users can accept or refuse non-essential cookies.</p>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html" data-ro>Înapoi la pagina principală</a>
+            <a href="index.html" data-en>Back to main page</a>
+        </div>
+    </footer>
+</body>
+</html> 
